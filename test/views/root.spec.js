@@ -1,31 +1,13 @@
-define(['views/root'], function(RootView) {
-  describe('App', function() {
+define(['views/root'], function(rootView) {
+  describe('Root View', function() {
 
-    describe('Model', function() {
-
+    after(function() {
+      rootView.remove();
     });
 
-    describe('Collection', function() {
-
-    });
-
-    describe('Views', function() {
-      describe('Root View', function() {
-        before(function() {
-          this.view = new RootView();
-        });
-
-        after(function() {
-          this.view.remove();
-        });
-
-        it('Should render properly', function() {
-          expect(this.view.render()).to.contain('data-layout-cid');
-        });
-      });
+    it('Should render properly', function() {
+      expect(rootView.render()).to.contain('data-layout-cid');
     });
 
   });
-
 });
-
