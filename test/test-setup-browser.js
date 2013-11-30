@@ -19,7 +19,6 @@ define(function(require) {
     // routers
     // views
     './views/root.spec',
-    'cs!./views/root-coffee.spec', // coffeescript works by default
     // models
     // collections
     // helpers
