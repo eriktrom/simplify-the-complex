@@ -1,12 +1,13 @@
 define([
   'backbone',
-  'views/root'
-], function (RootView, Backbone) {
+  'views/root',
+  'views/todo-list/index'
+], function (Backbone, RootView, todoListIndexView) {
   return Backbone.Router.extend({
-    // routes: {
-    //   "": function () {
-    //     var collection
-    //   }
-    // }
+    routes: {
+      "": function () {
+        RootView.setView(todoListIndexView);
+      }
+    }
   });
 });
