@@ -3,14 +3,14 @@ require([
   'backbone',
   'views/root',
   'helpers',
-], function ($, Backbone, RootView) {
+], function ($, Backbone, rootView) {
 
   initialize(function(next) {
     // Load any data that your app requires to boot
     // and initialize all routers here, the callback
     // `next` is provided in case the operations
     // needed are aysynchronous
-    
+
 
     next();
   });
@@ -27,7 +27,8 @@ require([
       // depend on Backbone history being setup
       // so need to wait to loadUrl() (which will)
       // actually execute the route
-      RootView.getInstance(document.body);
+      // RootView.getInstance(document.body);
+      rootView.appendTo(document.body);
 
       complete(function() {
         Backbone.history.loadUrl();
