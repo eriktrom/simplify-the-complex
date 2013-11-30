@@ -1,17 +1,11 @@
 define([
   'view',
-  'collection',
+  'collections/todos',
   'hbs!templates/todo-list/index'
-], function (View, Collection, template) {
-
-  var collection = new Collection([{
-    title: 'First Todo',
-    done: true
-  }]);
-
+], function (View, todos, template) {
   return new View({
     name: 'todo-list/index',
     template: template,
-    collection: collection
+    collection: todos
   });
 });
