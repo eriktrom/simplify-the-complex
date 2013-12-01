@@ -1,6 +1,5 @@
 define(['collection'], function (Collection) {
-  return new Collection([{
-    title: 'First Todo',
-    done: true
-  }]);
+  return Collection.extend({
+    name: 'todos'
+  });
 });

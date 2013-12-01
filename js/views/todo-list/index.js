@@ -2,7 +2,7 @@ define([
   'view',
   'collections/todos',
   'hbs!templates/todo-list/index'
-], function (View, todos, template) {
+], function (View, Todos, template) {
 
   var events = {
     "submit form": function(event) {
@@ -17,10 +17,13 @@ define([
     }
   };
 
-  return new View({
+  return View.extend({
     name: 'todo-list/index',
     template: template,
-    collection: todos,
+    collection: new Todos([{
+      title: 'First Todo',
+      done: true
+    }]),
     events: events
   });
 });

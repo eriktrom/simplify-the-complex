@@ -3,7 +3,7 @@ require([
   'backbone',
   'views/root',
   'helpers',
-], function ($, Backbone, rootView, TodoListRouter) {
+], function ($, Backbone, rootView) {
 
   $(function() {
     Backbone.history.start({
@@ -14,9 +14,11 @@ require([
 
     rootView.appendTo(document.body);
 
-    require(['routers/todo-list'], function () {
-      Backbone.history.loadUrl();
+    require(['routers/todo-list'], function (TodoListRouter) {
+      TodoListRouter();
+      Backbone.history.loadUrl(); // if this is async, we're in trouble, need to look that
     });
+
   });
 
 });
